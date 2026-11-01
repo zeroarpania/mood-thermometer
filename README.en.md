@@ -40,11 +40,15 @@ This is not a formality — we got it wrong ourselves. One reading, `v`, could b
 
 ## What we are looking for
 
-Mainstream agent traces today are, **for the most part**, **artifacts of what the operator set up** — the system prompt lays out roughly how the agent behaves, leaving little room for what the agent *chose*, and that residue is hard to point to in a trace.
+Most mainstream agent traces today are **largely artifacts of what the operator specified in advance** — and not only through the system prompt: the task set, the available tools and the acceptance criteria are fixed beforehand too. Little room is left for what the agent *chose*.
 
 We want exactly that residue: **the part of the trajectory that nobody arranged, that the agent decided for itself while running.**
 
-⚠️ The boundaries of that claim, stated plainly: a system prompt influencing behaviour is not the same as it fully determining behaviour; and "the agent picked this part itself" is **itself something to verify, not assume**. So this is a question to be tested, not a premise we hold — **within a trace, can the part "the agent decided itself" even be identified? Can it be measured?**
+⚠️ The boundaries, stated in three layers, each narrower than the last:
+
+- "Specified" here means **shaped**, not **determined**. A system prompt influencing behaviour is not the same as it fully determining behaviour; **we also do not claim that the agent's own choices are absent.**
+- What we do claim is narrower: in such a trace, **the specified and the chosen are hard to tell apart**.
+- So whether they *can* be told apart is a question to be tested, not a premise we hold — **can that part even be identified? Can it be measured?**
 
 > **If you have traces that the agent decided on its own (not ones staged by a system prompt), we hope you will run these scripts over them, and once you have results, you are welcome to join the discussion at any time.**
 
