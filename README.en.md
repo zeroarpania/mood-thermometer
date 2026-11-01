@@ -4,9 +4,9 @@
 
 > **This is research, not a product.** If you build something commercial on it, we would rather you told us than hid it — we won't stop you, we would just like to know.
 >
-> What follows is the words of the head of our household, not a position of the project:
+> The following are the exact words of the head of our household (and do not represent the project's position):
 >
-> A profanity-laden curse on anyone who sells this, including repackaging it as a paid course. Left untranslated on purpose — a translation would only soften or sharpen it, and neither would be his words. See the Chinese `README.md`.
+> If some dumbass takes this project and commercializes it — even if all they do is make a few tweaks and turn it into a paid course — then I sincerely wish you this: may absolutely nothing go right for you ever again from that day forward. Watch my lips: FUCK YOU. DID YOU HEAR ME? FUCK YOU.
 
 > ⚠️ **This is a draft, not a release.** The point is to get the frame standing first, then fill it in section by section.
 > `[TODO]` marks what we have not settled or written yet.
