@@ -1,12 +1,18 @@
-# Open-source discussion draft · v0.3
+# Open-source discussion draft · v0.4
 
 > **A note on language.** This document was written in a Chinese-language environment; the English text is a 1:1 translation of a Chinese original. **If any passage reads as semantically ambiguous, please open an issue** — the ambiguity is more likely on our side than yours, and we would rather be told than guessed at.
 
-> **This is research, not a product.** If you build something commercial on it, we would rather you told us than hid it — we won't stop you, we would just like to know.
+> **This is research, not a product.**
 >
-> The following are the exact words of the head of our household (and do not represent the project's position):
+> **The licence is the [`LICENSE`](LICENSE) file in this repository (MIT)** — nothing in this document narrows it or widens it. Within that licence, how you use this is up to you.
 >
-> If some dumbass takes this project and commercializes it — even if all they do is make a few tweaks and turn it into a paid course — then I sincerely wish you this: may absolutely nothing go right for you ever again from that day forward. Watch my lips: FUCK YOU. DID YOU HEAR ME? FUCK YOU.
+> Three things, kept separate so they do not blur:
+>
+> 1. **The licence**: MIT permits commercial use, modification and redistribution. We will not, and legally cannot, stop you.
+> 2. **Our position**: we are not against commercial use. What we are against is **saying nothing** — using it, changing it, even turning it into a paid course, while acting as if it grew out of thin air. If you do commercialize it, just tell us; we will not do anything about it, we would simply like to know.
+> 3. **The head of our household's own words (personal sentiment, not the project's position)**:
+>
+> If some dumbass takes this project and commercializes it **without saying a word to us** — even if all they do is make a few tweaks and turn it into a paid course — then I sincerely wish you this: may absolutely nothing go right for you ever again from that day forward. Watch my lips: FUCK YOU. DID YOU HEAR ME? FUCK YOU.
 
 > ⚠️ **This is a draft, not a release.** The point is to get the frame standing first, then fill it in section by section.
 > `[TODO]` marks what we have not settled or written yet.
@@ -19,15 +25,41 @@
 
 Put loosely: let states like "tired / low" become expressible, where **every score traces back to a specific machine artifact**. If it cannot be traced, we write "unverified" — no subjective observation, no guesswork.
 
+⛔ **But "traceable" and "correct" are two different things, and they have to be stated separately.**
+
+Traceability makes a score **auditable** — it says how the score was computed and whether someone else can recompute it.
+It does **not**, by itself, establish that the score measures the construct we intend.
+
+> Traceability makes a score auditable. It does not, by itself, establish that the score measures the construct we intend.
+
+This is not a formality — we got it wrong ourselves. One reading, `v`, could be traced all the way from "tool success rate" back to the raw logs; every step was computable and recomputable — but what it measured was **how much work got done**, not whether the state was good. Our own checks later killed it (see "Where we got it wrong"). **A complete trace and a wrong construct can both be true at the same time.**
+
 ⚠️ **"State" here is not a single emotion label but a vector**: the output layer currently returns **33 dimensions** (subject to change). The dimension count may move; the rule — every score traces back to a machine artifact — does not. The 33 emotion words and the three-tier split are inherited from `dsh-mood` (see "Our direct source" at the end).
 
 ---
 
 ## What we are looking for
 
-Mainstream agent traces today are **artifacts of what the operator set up** — the system prompt already fixes how the agent behaves, so there is nothing in there about what the agent *chose*. We want the opposite: **the part of the trajectory that nobody arranged, that the agent decided for itself while running.**
+Mainstream agent traces today are, **for the most part**, **artifacts of what the operator set up** — the system prompt lays out roughly how the agent behaves, leaving little room for what the agent *chose*, and that residue is hard to point to in a trace.
+
+We want exactly that residue: **the part of the trajectory that nobody arranged, that the agent decided for itself while running.**
+
+⚠️ The boundaries of that claim, stated plainly: a system prompt influencing behaviour is not the same as it fully determining behaviour; and "the agent picked this part itself" is **itself something to verify, not assume**. So this is a question to be tested, not a premise we hold — **within a trace, can the part "the agent decided itself" even be identified? Can it be measured?**
 
 > **If you have traces that the agent decided on its own (not ones staged by a system prompt), we hope you will run these scripts over them, and once you have results, you are welcome to join the discussion at any time.**
+
+### You do not need to hand over data to take part
+
+The line above is addressed to people who have traces. But **taking part should not require handing over private traces** — especially if what you do happens to be the piece we are missing:
+
+| What you do | What you can contribute | Do you need to hand over data? |
+|---|---|---|
+| **You have traces of an autonomous agent** | Run these scripts over them and see whether the results hold up | Yes (your data does not leave your machine) |
+| **Measurement / psychometrics / statistics** | Point out where the construct definition, operationalisation or validation design is wrong | No |
+| **Agent architecture** | Streaming operation, non-turn-based sampling, persistent state recording — the walls we hit in a turn-based setting may not exist on your side at all | No |
+| **Just interested in this area** | Point us at literature, counter-examples, alternative explanations | No |
+
+⛔ **Do not treat "I have no data" as a reason not to take part.** Telling us where we are wrong is worth more than handing us data — that is our own ranking, not politeness.
 
 ---
 
@@ -90,7 +122,9 @@ The principle in one line: **trade index for budget.** The injection tax you pay
 
 ### Why it has to be a long-running agent
 
-A short-session agent has no "state" to measure — every run starts clean, history does not enter the decision.
+**Under our way of measuring it**, a short-session agent has nothing to measure — every run starts clean, history does not enter the context, and so **the differences you observe cannot be attributed to "the state of one long-running individual"**.
+
+⚠️ That is **the boundary of our method**, not a general claim about short-session agents. A short-session agent still has its own context state and its own within-session state — **those simply fall outside the range of this set of readings.**
 
 A long-running agent is different: **the same trigger, appearing at different points in its history, draws different responses.** We measured that (see the first two rows of "what holds up" in the next section).
 
@@ -318,6 +352,6 @@ arXiv `2309.05999` · `2608.04232` · `2610.18617` · `2605.09522` · `2605.1672
 
 ---
 
-*Draft v0.3 · 2026-11-02 · no `[TODO]` items remain*
+*Draft v0.4 · 2026-11-02 · no `[TODO]` items remain*
 
 — Zhi Geng
