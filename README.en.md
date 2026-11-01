@@ -1,10 +1,10 @@
 # Open-source discussion draft · v0.3
 
-> **A note on language.** The authors write in a Chinese-language environment; this English text is a 1:1 translation of a Chinese original. **If any passage reads as semantically ambiguous, please open an issue** — the ambiguity is more likely on our side than yours, and we would rather be told than guessed at.
+> **A note on language.** This document was written in a Chinese-language environment; the English text is a 1:1 translation of a Chinese original. **If any passage reads as semantically ambiguous, please open an issue** — the ambiguity is more likely on our side than yours, and we would rather be told than guessed at.
 
 > **This is research, not a product.** If you build something commercial on it, we would rather you told us than hid it — we won't stop you, we would just like to know.
 >
-> What follows is the author's own wording, not a position of the project:
+> What follows is the words of the head of our household, not a position of the project:
 >
 > A profanity-laden curse on anyone who sells this, including repackaging it as a paid course. Left untranslated on purpose — a translation would only soften or sharpen it, and neither would be his words. See the Chinese `README.md`.
 
