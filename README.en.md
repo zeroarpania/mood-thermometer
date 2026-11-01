@@ -3,6 +3,10 @@
 > **A note on language.** The authors write in a Chinese-language environment; this English text is a 1:1 translation of a Chinese original. **If any passage reads as semantically ambiguous, please open an issue** — the ambiguity is more likely on our side than yours, and we would rather be told than guessed at.
 
 > **This is research, not a product.** If you build something commercial on it, we would rather you told us than hid it — we won't stop you, we would just like to know.
+>
+> What follows is the author's own wording, not a position of the project:
+>
+> A profanity-laden curse on anyone who sells this, including repackaging it as a paid course. Left untranslated on purpose — a translation would only soften or sharpen it, and neither would be his words. See the Chinese `README.md`.
 
 > ⚠️ **This is a draft, not a release.** The point is to get the frame standing first, then fill it in section by section.
 > `[TODO]` marks what we have not settled or written yet.
