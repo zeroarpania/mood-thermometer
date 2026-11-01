@@ -1,0 +1,28 @@
+# 内部材料 —— 永不进这个仓
+
+这个仓库**只放脱敏版**。下面这些是同名项目仓里的内部材料，
+如果哪天有人把两个目录搞混了，`.gitignore` 会在 `git add .` 时挡住它们。
+
+# 内部工作件
+设计稿.md
+代码索引.md
+给*.md
+archive.config.json
+
+# 原始数据与推演
+推理/
+证据/
+代码快照/
+*.zstd
+*.jsonl.zstd
+session*.json
+
+# 我的状态数据（绝对不进）
+state.json
+state.json.*
+
+# 备份与临时
+*.BEFORE-*
+*.backup
+_留档/
+_tmp*

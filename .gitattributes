@@ -1,0 +1,3 @@
+# 仓库内统一 LF —— 避免检出到不同平台时换行符变化
+# 这个仓库里全是脚本与文本，Windows 上用 CRLF 会让 diff 与行数统计对不上
+* text=auto eol=lf
