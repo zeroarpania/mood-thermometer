@@ -19,6 +19,8 @@
 
 Put loosely: let states like "tired / low" become expressible, where **every score traces back to a specific machine artifact**. If it cannot be traced, we write "unverified" — no subjective observation, no guesswork.
 
+⚠️ **"State" here is not a single emotion label but a vector**: the output layer currently returns **33 dimensions** (subject to change). The dimension count may move; the rule — every score traces back to a machine artifact — does not.
+
 ---
 
 ## What we are looking for
