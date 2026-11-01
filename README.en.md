@@ -19,7 +19,7 @@
 
 Put loosely: let states like "tired / low" become expressible, where **every score traces back to a specific machine artifact**. If it cannot be traced, we write "unverified" — no subjective observation, no guesswork.
 
-⚠️ **"State" here is not a single emotion label but a vector**: the output layer currently returns **33 dimensions** (subject to change). The dimension count may move; the rule — every score traces back to a machine artifact — does not.
+⚠️ **"State" here is not a single emotion label but a vector**: the output layer currently returns **33 dimensions** (subject to change). The dimension count may move; the rule — every score traces back to a machine artifact — does not. The 33 emotion words and the three-tier split are inherited from `dsh-mood` (see "Our direct source" at the end).
 
 ---
 
@@ -261,6 +261,21 @@ node _probe-corpus-scan.mjs --files --out _corpus-files.txt
 ---
 
 ## References
+
+### ⛔ Our direct source (inheritance, not "consulted")
+
+| Source | What we inherited |
+|---|---|
+| **dsh-mood** — 一叶子秋 (GitHub `JMX-4869`) · MIT · [`github.com/JMX-4869/dsh-mood`](https://github.com/JMX-4869/dsh-mood) | The output layer's **33 emotion words** and their **three-tier split** (basic 11 / compound 18 / contemporary 4), copied directly from this plugin on 2026-10-29; version compared: `0.14.16` |
+
+**What was copied and what was not — these two things must be stated separately; lumping them together is obfuscation:**
+
+- **Only "which emotion words exist, and how they are grouped" was copied.** All 33 words correspond one-to-one; not one was changed. The original table is in its `README.md`, section "33 种心情，按来源分三层".
+- **What it does not have**: the `(valence, arousal)` coordinate of each word, the derivation from input layer to middle layer, every parameter in `CFG`, the 23 check scripts, and every conclusion in this draft. dsh-mood's structure is "33 moods each holding a value" — it has **no two-dimensional coordinates**. That layer is ours.
+- **We changed one thing in it**: its word list mixes "emotion" with "behaviour/event" — 撒娇 (acting clingy) is an action performed, 摆烂 (checked-out slacking) is a behavioural choice, 破防 (breaking down) is the outcome of an event. None of them is the state itself. We mark those three as not participating in the emotion-space lighting (see `NON_EMOTION_DIMS` in `appraisal.mjs`). **That judgement is ours; it does not belong to dsh-mood.**
+- **Licence**: dsh-mood is MIT, and so is this repository.
+
+> **Why this gets its own section**: this whole draft argues that "every score traces back to a source". If we did not write down the source of our own dimension table, the project would be contradicting itself.
 
 > ⚠️ **How to read this list**: "read in full" = downloaded and read to specific passages, quoting the original wording; "abstract only" = only the abstract; "entry only" = only the entry text. Authors are given only where the byline was actually verified; otherwise left blank — **no guessing**.
 
